@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'segoe ui', Comic Sans MS, Geneva, Verdana, serif bold italic;
+    font-family: 'Segoe UI', Comic Sans MS, Geneva, Verdana, sans-serif;
 }
 
 /*  estilo do corpo, vou centralizar tudo */
@@ -30,6 +30,12 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
     color: #2c3e50;
+}
+
+#form-farefa {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 #input-tarefa {
