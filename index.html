@@ -1,0 +1,37 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List - Meu Gerenciador de Tarefas</title>
+
+    <!-- o comando abaixo conecta o aqruivo com CSS (estilo) ao HTML -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+   <main class="container">
+     <h1>Minhas Tarefas</h1>
+
+     <!-- Formulário para adicionar novas tarefas -->
+     <form id="form-tarefa">
+        <input
+         type="text"
+          id="task-input"
+          placeholder="Digite uma nova tarefa..." 
+          required
+        >
+        <button type="submit">Adicionar</button>
+     </form>
+
+     <!-- Lista de tarefas sem ordem onde entraram as atarefas do JS -->
+     <ul id="lista-de-tarefas"></ul>
+   </main>
+
+ <!-- conexão com o arquivo JS no HTML -->
+ <script src="script.js"></script>
+</body>
+
+</html>
