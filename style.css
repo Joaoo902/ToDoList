@@ -60,5 +60,5 @@ button:hover {
 
 /* lista de tarefas: remove os pontos e bolinhas do padrão HTML */
 #lista-de-tarefas {
-    list.style: none;
+    list-style: none;
 }
