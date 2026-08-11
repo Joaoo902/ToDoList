@@ -1,0 +1,64 @@
+/* vou remover as margens padrão dos navegadores para não ter desalinhamentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'segoe ui', Comic Sans MS, Geneva, Verdana, serif bold italic;
+}
+
+/*  estilo do corpo, vou centralizar tudo */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #160040;
+    color: #ffffff;
+}
+
+/* conteiner, é o centralizado onde fica a lista */
+.container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+#input-tarefa {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+#input-tarefa:focus {
+    border-color: #3498db;
+}
+
+button {
+    padding: 10px 18px;
+    background-color: #3498dc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color:#2980b9;
+}
+
+/* lista de tarefas: remove os pontos e bolinhas do padrão HTML */
+#lista-de-tarefas {
+    list.style: none;
+}
