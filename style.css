@@ -41,7 +41,7 @@ h1 {
 #input-tarefa {
     flex: 1;
     padding: 10px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff0000;
     border-radius: 6px;
     outline: none;
 }
