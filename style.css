@@ -67,4 +67,24 @@ button:hover {
 /* lista de tarefas: remove os pontos e bolinhas do padrão HTML */
 #lista-de-tarefas {
     list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f9f9f9; /* cor cinza claro para destacar*/
+    color: #3a3838; /* cor do texto */
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* estilo do botão excluir */
+.btn-excluir {
+    background-color: #e74c3c;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.btn-excluir:hover {
+    background-color: #c0392b;
 }
