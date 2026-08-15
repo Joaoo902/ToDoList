@@ -32,7 +32,7 @@ formTarefa.addEventListener('submit', function(event) {
 
 // Adiciona um evento de clique na lista de tarefas para excluir a tarefa
 listaTarefas.addEventListener('click', function (event) {
-    if (event,target,classList.contains('btn-excluir')) {
+    if (event.target.classList.contains('btn-excluir')) {
         const liParaRemover = event.target.parentElement;
         liParaRemover.remove();
     }
