@@ -88,3 +88,28 @@ button:hover {
 .btn-excluir:hover {
     background-color: #c0392b;
 }
+
+#lista-de-tarefas {
+    list-style: none;
+    padding:0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#lista-de-tarefas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: #333333;
+    border-radius:6px;
+    word-break: break-word;
+}
+
+#lista-de-tarefas li.concluida span{
+    text-decoration: line-through;
+    opacity: 0.6;
+}

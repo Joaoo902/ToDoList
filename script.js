@@ -11,10 +11,15 @@ function salvarTarefas(tarefas) {
     localStorage.setItem('minhasTarefas', JSON.stringify(tarefas));
 }
 
-function criarElementoTarefa(texto) {
+function criarElementoTarefa(objetoTarefa) {
     const novaLi = document.createElement('li');
+
+    if (objetoTarefa.concluida) {
+        novaLi.classList.add('concluida');
+    }
+
     novaLi.innerHTML = `
-        <span>${texto}</span>
+        <span>${objetoTarefa.texto}</span>
         <button class="btn-excluir">X</button>
     `;
     listaTarefas.appendChild(novaLi);
@@ -36,10 +41,12 @@ formTarefa.addEventListener('submit', function (event) {
         return;
     }
 
-    criarElementoTarefa(textoTarefa);
+    const novaTarefa = { texto: textoTarefa, concluida: false};
+
+    criarElementoTarefa(novaTarefa);
 
     const tarefas = obterTarefasSalvas();
-    tarefas.push(textoTarefa);
+    tarefas.push(novaTarefa);
     salvarTarefas(tarefas);
 
     inputTarefa.value = '';
@@ -47,6 +54,8 @@ formTarefa.addEventListener('submit', function (event) {
 });
 
 listaTarefas.addEventListener('click', function (event) {
+    const elementoClicado = event.target;
+
     if (event.target.classList.contains('btn-excluir')) {
         const liParaRemover = event.target.parentElement;
         const textoParaRemover = liParaRemover.querySelector('span').textContent;
@@ -58,6 +67,29 @@ listaTarefas.addEventListener('click', function (event) {
             return tarefa !== textoParaRemover;
         });
         salvarTarefas(tarefas);
+        return;
+    }
+
+    letLiAlvo = null;
+    if (elementoClicado.tagName === 'SPAN') {
+        liAlvo = elementoClicado.parentElement;
+    } else if (elementoClicado.tagName === 'LI') {
+        liAlvo = elementoClicado;
+    }
+
+    if (liAlvo) {
+        liAlvo.classList.toggle('concluida');
+        const textoTarefa = liAlvo.querySelector('span').textContent;
+
+        const tarefas = obterTarefasSalvas();
+        const tarefaObjeto = tarefas.find(function (t) {
+            return t.texto === textoTarefa;
+        });
+
+        if (tarefaObjeto) {
+            tarefaObjeto.concluida = liAlvo.classList.contains('concluida');
+            salvarTarefas(tarefas);
+        }
     }
 });
 
